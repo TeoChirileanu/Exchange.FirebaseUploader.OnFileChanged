@@ -7,26 +7,34 @@ namespace FileSync
 {
     public class FirebaseUploader
     {
-        private readonly string _credentialsFile;
         private readonly string _bucketName;
+        private readonly StorageClient _storageClient;
 
         public FirebaseUploader(string credentialsFile, string bucketName)
         {
-            _credentialsFile = credentialsFile;
             _bucketName = bucketName;
+            
+            var credentials = GoogleCredential.FromFile(credentialsFile);
+            _storageClient = StorageClient.Create(credentials);
         }
         
         public async Task UploadFile(string tempFile)
         {
-            var credentials = GoogleCredential.FromFile(_credentialsFile);
-            var storageClient = await StorageClient.CreateAsync(credentials);
-            
-            var objectName = Path.GetFileNameWithoutExtension(tempFile);
+            var objectName = Path.GetFileName(tempFile);
             var objectPath = Path.GetFullPath(tempFile);
             await using var objectStream = File.OpenRead(objectPath);
 
             // todo: create wrapper around storage client
-            await storageClient.UploadObjectAsync(_bucketName, objectName, null, objectStream);
+            await _storageClient.UploadObjectAsync(_bucketName, objectName, null, objectStream);
+        }
+
+        public async Task DownloadFile(string fileName, string downloadLocation)
+        {
+            var absoluteFileLocation = Path.GetFullPath(downloadLocation);
+            await using var objectStream = File.OpenWrite(@$"{absoluteFileLocation}\{fileName}");
+
+            // todo: create wrapper around storage client
+            await _storageClient.DownloadObjectAsync(_bucketName, fileName, objectStream);
         }
     }
 }
