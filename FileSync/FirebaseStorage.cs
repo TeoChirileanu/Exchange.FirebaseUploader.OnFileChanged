@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using FileSync.Exceptions;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Storage.V1;
 

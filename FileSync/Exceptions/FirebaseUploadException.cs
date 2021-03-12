@@ -1,6 +1,6 @@
 using System;
 
-namespace FileSync
+namespace FileSync.Exceptions
 {
     public class FirebaseUploadException : Exception
     {

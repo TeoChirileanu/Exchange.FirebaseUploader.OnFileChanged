@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSync", "FileSync\FileSy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSync.Console", "FileSync.Console\FileSync.Console.csproj", "{56EFFB7C-2162-4247-B326-E05589EF7C94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSync.Tests", "FileSync.Tests\FileSync.Tests.csproj", "{04E62827-8CF0-4FE8-BE91-D48458D7A31A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{56EFFB7C-2162-4247-B326-E05589EF7C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56EFFB7C-2162-4247-B326-E05589EF7C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56EFFB7C-2162-4247-B326-E05589EF7C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E62827-8CF0-4FE8-BE91-D48458D7A31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E62827-8CF0-4FE8-BE91-D48458D7A31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E62827-8CF0-4FE8-BE91-D48458D7A31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E62827-8CF0-4FE8-BE91-D48458D7A31A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

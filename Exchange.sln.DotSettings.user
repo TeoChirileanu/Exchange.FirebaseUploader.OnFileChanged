@@ -4,8 +4,11 @@
     &lt;TestId&gt;NUnit3x::9F5598EA-1D78-4A01-9A76-F3AA96231A78::net5.0::FileSync.FirebaseUploaderTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4da857ec_002D5efa_002D4e48_002Db41a_002D9bc8e4c1bbf5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;FileSync.Tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\teodo\Documents\RiderProjects\Exchange\FileSync.Tests" Presentation="&amp;lt;FileSync.Tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=90276faa_002D734d_002D426e_002D8773_002De8bb9d974102/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" IsActive="True" Name="ReactiveFileWatcherTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=90276faa_002D734d_002D426e_002D8773_002De8bb9d974102/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" Name="ReactiveFileWatcherTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9F5598EA-1D78-4A01-9A76-F3AA96231A78::net5.0::FileSync.ReactiveFileWatcherTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;

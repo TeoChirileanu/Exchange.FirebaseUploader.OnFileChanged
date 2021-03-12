@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using NFluent;
 using NUnit.Framework;
 
-namespace FileSync
+namespace FileSync.Tests
 {
     public class FirebaseUploaderTests
     {

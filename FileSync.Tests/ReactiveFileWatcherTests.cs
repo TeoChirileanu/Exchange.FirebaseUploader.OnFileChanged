@@ -1,10 +1,10 @@
+using System;
 using System.IO;
 using System.Threading;
 using NFluent;
-using NSubstitute;
 using NUnit.Framework;
 
-namespace FileSync
+namespace FileSync.Tests
 {
     public class ReactiveFileWatcherTests
     {
@@ -30,13 +30,10 @@ namespace FileSync
         [Test]
         public void ShouldWriteHelloToWatchedFile_AfterItHasBeenModified() {
             // Arrange
-            const string originalContent = "Hello";
-            var fileUploader = Substitute.For<IFileUploader>();
-            fileUploader
-                .WhenForAnyArgs(uploader => uploader.UploadFile(null!))
-                .Do(_ => File.WriteAllText(_fileToWatch, originalContent));
+            const string originalContent = "Hello";;
             
-            using var fileWatcher = new ReactiveFileWatcher(_fileToWatch, fileUploader.UploadFile);
+            using var fileWatcher = new ReactiveFileWatcher(_fileToWatch, async _ =>
+                await File.WriteAllTextAsync(_fileToWatch, originalContent));
 
             // Act
             File.WriteAllText(_fileToWatch, string.Empty); // change the watched file
