@@ -10,11 +10,16 @@ namespace FileSync
         private const string CredentialsFile = @"C:\Users\teodo\Documents\Google\TransactMe-1a88359a2131.json";
         private const string BucketName = "transactme-db.appspot.com";
         private const string FileContent = "foobar";
+        private const string DownloadLocation = @".\Test";
         private readonly string _tempFile = Path.GetRandomFileName();
 
         [SetUp]
-        public void SetUp() => File.WriteAllText(_tempFile, FileContent);
-        
+        public void SetUp()
+        {
+            Directory.CreateDirectory(DownloadLocation);
+            File.WriteAllText(_tempFile, FileContent);
+        }
+
         [Test]
         public async Task ShouldUploadFile()
         {
@@ -25,7 +30,8 @@ namespace FileSync
             await firebaseUploader.UploadFile(_tempFile);
             
             // Assert
-            Assert.Pass("Manual check");
+            var downloadFile = firebaseUploader.DownloadFile(_tempFile, DownloadLocation);
+            Check.ThatAsyncCode(() => downloadFile).DoesNotThrow();
         }
 
         [Test]
@@ -36,22 +42,18 @@ namespace FileSync
             await firebaseUploader.UploadFile(_tempFile);
 
             // Act
-            const string downloadLocation = @".\Test";
-            Directory.CreateDirectory(downloadLocation);
-            await firebaseUploader.DownloadFile(_tempFile, downloadLocation);
+            await firebaseUploader.DownloadFile(_tempFile, DownloadLocation);
             
             // Assert
-            var actualFileContent = await File.ReadAllTextAsync($@"{downloadLocation}\{_tempFile}");
+            var actualFileContent = await File.ReadAllTextAsync($@"{DownloadLocation}\{_tempFile}");
             Check.That(actualFileContent).IsEqualTo(FileContent);
-            
-            // Cleanup
-            Directory.Delete(downloadLocation, true);
         }
 
         [TearDown]
         public void TearDown()
         {
             File.Delete(_tempFile);
+            Directory.Delete(DownloadLocation, true);
         }
     }
 }
