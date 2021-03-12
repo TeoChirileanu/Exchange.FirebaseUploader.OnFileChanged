@@ -2,6 +2,6 @@ namespace FileSync
 {
     public interface IFileUploader
     {
-        void UploadFile(string absoluteFilePath);
+        void UploadFile(string filePath);
     }
 }

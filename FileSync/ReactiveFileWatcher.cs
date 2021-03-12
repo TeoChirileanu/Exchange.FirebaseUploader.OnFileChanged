@@ -20,7 +20,7 @@ namespace FileSync
             _disposable = Observable.FromEventPattern(_fileWatcher, nameof(_fileWatcher.Changed))
                 .Sample(TimeSpan.FromMilliseconds(200))// throttle a little bit
                 .Select(data => ((FileSystemEventArgs) data.EventArgs).FullPath) // get path only 
-                .Subscribe(onFileChanged, e => Console.WriteLine(e.ToString()));
+                .Subscribe(onFileChanged);
 
             _fileWatcher.EnableRaisingEvents = true; // start watching
         }
