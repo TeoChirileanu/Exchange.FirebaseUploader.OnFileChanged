@@ -11,8 +11,8 @@ namespace FileSync
         private const string TestDirectoryName = "Test";
         private const string FileToWatchName = "ToWatch.txt";
 
-        private DirectoryInfo _directoryToWatch;
-        private string _fileToWatch;
+        private DirectoryInfo _directoryToWatch = null!;
+        private string _fileToWatch = null!;
 
 
         [SetUp]
@@ -33,7 +33,7 @@ namespace FileSync
             const string originalContent = "Hello";
             var fileUploader = Substitute.For<IFileUploader>();
             fileUploader
-                .WhenForAnyArgs(uploader => uploader.UploadFile(null))
+                .WhenForAnyArgs(uploader => uploader.UploadFile(null!))
                 .Do(_ => File.WriteAllText(_fileToWatch, originalContent));
             
             using var fileWatcher = new ReactiveFileWatcher(_fileToWatch, fileUploader.UploadFile);

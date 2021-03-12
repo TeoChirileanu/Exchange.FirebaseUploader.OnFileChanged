@@ -24,7 +24,7 @@ namespace FileSync
         public async Task ShouldUploadFile()
         {
             // Arrange
-            var firebaseUploader = new FirebaseUploader(CredentialsFile, BucketName);
+            var firebaseUploader = new FirebaseStorage(CredentialsFile, BucketName);
 
             // Act
             await firebaseUploader.UploadFile(_tempFile);
@@ -38,7 +38,7 @@ namespace FileSync
         public async Task ShouldDownloadFile()
         {
             // Arrange
-            var firebaseUploader = new FirebaseUploader(CredentialsFile, BucketName);
+            var firebaseUploader = new FirebaseStorage(CredentialsFile, BucketName);
             await firebaseUploader.UploadFile(_tempFile);
 
             // Act

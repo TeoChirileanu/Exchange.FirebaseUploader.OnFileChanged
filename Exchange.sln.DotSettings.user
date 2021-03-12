@@ -5,14 +5,14 @@
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=90276faa_002D734d_002D426e_002D8773_002De8bb9d974102/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" Name="ReactiveFileWatcherTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=90276faa_002D734d_002D426e_002D8773_002De8bb9d974102/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" IsActive="True" Name="ReactiveFileWatcherTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9F5598EA-1D78-4A01-9A76-F3AA96231A78::net5.0::FileSync.ReactiveFileWatcherTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a8f592aa_002D8b05_002D4bd3_002D92b2_002D0ba154451385/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldDownloadFile #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a8f592aa_002D8b05_002D4bd3_002D92b2_002D0ba154451385/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShouldDownloadFile #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::9F5598EA-1D78-4A01-9A76-F3AA96231A78::net5.0::FileSync.FirebaseUploaderTests.ShouldDownloadFile&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9F5598EA-1D78-4A01-9A76-F3AA96231A78::net5.0::FileSync.FirebaseUploaderTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b68d9e2b_002D119a_002D40ff_002Dbd48_002D5e9abc9f7ced/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShouldDownloadFile" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
