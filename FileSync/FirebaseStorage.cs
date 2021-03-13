@@ -7,7 +7,7 @@ using Google.Cloud.Storage.V1;
 
 namespace FileSync
 {
-    public class FirebaseStorage : IFileUploader
+    public class FirebaseStorage
     {
         private readonly string _bucketName;
         private readonly StorageClient _storageClient;
