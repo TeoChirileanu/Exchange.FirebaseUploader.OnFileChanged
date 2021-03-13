@@ -15,15 +15,18 @@ namespace FileSync.Tests
 
 
         [SetUp]
-        public void SetUp() {
+        public void SetUp()
+        {
             _fileToWatch.Directory?.Create();
             File.WriteAllText(_fileToWatch.FullName, string.Empty); // create the file
         }
-        
+
         [Test]
-        public async Task ShouldWriteHelloToWatchedFile_AfterItHasBeenModified() {
+        public async Task ShouldWriteHelloToWatchedFile_AfterItHasBeenModified()
+        {
             // Arrange
-            const string originalContent = "Hello";;
+            const string originalContent = "Hello";
+            ;
 
             async Task OnFileChanged(FileInfo _)
             {
@@ -42,7 +45,8 @@ namespace FileSync.Tests
         }
 
         [TearDown]
-        public void TearDown() {
+        public void TearDown()
+        {
             _fileToWatch.Delete();
             _fileToWatch.Directory?.Delete();
         }

@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
@@ -15,7 +14,7 @@ namespace WorkerService
             {
                 Log.Logger = new LoggerConfiguration()
                     .MinimumLevel.Information()
-                    .WriteTo.File(logFileLocation, rollingInterval: RollingInterval.Day)
+                    .WriteTo.File(logFileLocation)
                     .WriteTo.Console()
                     .CreateLogger();
                 CreateHostBuilder(args).Build().Run();
@@ -32,10 +31,12 @@ namespace WorkerService
             }
         }
 
-        private static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        private static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .UseSerilog()
                 .UseWindowsService()
                 .ConfigureServices((_, services) => services.AddHostedService<Worker>());
+        }
     }
 }

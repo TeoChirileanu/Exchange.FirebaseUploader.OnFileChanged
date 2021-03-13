@@ -9,8 +9,8 @@ namespace FileSync
     public class AzureStorage
     {
         private const string ShareName = "exchange";
-        private readonly ShareClient _share;
         private readonly ILogger _logger;
+        private readonly ShareClient _share;
 
         public AzureStorage(string connectionString, ILogger logger)
         {
@@ -23,15 +23,15 @@ namespace FileSync
             try
             {
                 _logger.LogInformation($"Uploading file {fileInfo.FullName}...");
-                
+
                 var directoryClient = _share.GetDirectoryClient(fileInfo.Directory!.Name);
                 await directoryClient.CreateIfNotExistsAsync();
-                
+
                 var fileClient = directoryClient.GetFileClient(fileInfo.Name);
                 await fileClient.CreateAsync(fileInfo.Length);
                 await using var fileStream = fileInfo.OpenRead();
                 await fileClient.UploadAsync(fileStream);
-                
+
                 _logger.LogInformation($"Successfully uploaded at {fileClient.Uri}");
             }
             catch (Exception e)

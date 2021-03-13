@@ -3,6 +3,12 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <UserSecretsId>dotnet-WorkerService-C0C05760-26A6-4DFC-8E7F-BC624556AAB0</UserSecretsId>
+        <RuntimeIdentifier>win-x86-aot</RuntimeIdentifier>
+        <PublishDir>pub</PublishDir>
+        <PublishSingleFile>true</PublishSingleFile>
+        <PublishTrimmed>true</PublishTrimmed>
+        <AppendTargetFrameworkToPublishDir>false</AppendTargetFrameworkToPublishDir>
+        <AppendRuntimeIdentifierToPublishDir>false</AppendRuntimeIdentifierToPublishDir>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,5 +22,26 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FileSync\FileSync.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="pub\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="pub\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="pub\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="pub\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="pub\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="pub\appsettings.json" />
     </ItemGroup>
 </Project>

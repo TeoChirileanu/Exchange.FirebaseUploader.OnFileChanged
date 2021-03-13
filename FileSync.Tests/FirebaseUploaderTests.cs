@@ -28,7 +28,7 @@ namespace FileSync.Tests
 
             // Act
             await firebaseUploader.UploadFile(_tempFile);
-            
+
             // Assert
             var downloadFile = firebaseUploader.DownloadFile(_tempFile, DownloadLocation);
             Check.ThatAsyncCode(() => downloadFile).DoesNotThrow();
@@ -43,7 +43,7 @@ namespace FileSync.Tests
 
             // Act
             await firebaseUploader.DownloadFile(_tempFile, DownloadLocation);
-            
+
             // Assert
             var actualFileContent = await File.ReadAllTextAsync($@"{DownloadLocation}\{_tempFile}");
             Check.That(actualFileContent).IsEqualTo(FileContent);

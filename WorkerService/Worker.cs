@@ -10,9 +10,9 @@ namespace WorkerService
 {
     public class Worker : BackgroundService
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<Worker> _logger;
 
-        public Worker(ILogger logger)
+        public Worker(ILogger<Worker> logger)
         {
             _logger = logger;
             _logger.LogInformation("Service started");
@@ -20,34 +20,26 @@ namespace WorkerService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            var fileToWatchAsString = Environment.GetEnvironmentVariable("FILE_TO_WATCH");
+            if (fileToWatchAsString == null)
             {
-                try
-                {
-                    var fileToWatch = Environment.GetEnvironmentVariable("FILE_TO_WATCH");
-                    if (fileToWatch == null)
-                    {
-                        _logger.LogError("No file to be watched. Please set variable FILE_TO_WATCH");
-                        break;
-                    }
-                    var connectionString = Environment.GetEnvironmentVariable("AZURE_CONNECTION_STRING");
-                    if (connectionString == null)
-                    {
-                        _logger.LogError("No connection string found. Please set variable AZURE_CONNECTION_STRING");
-                        break;
-                    }
-
-                    var azureStorage = new AzureStorage(connectionString, _logger);
-                    using var _ = new ReactiveFileWatcher(new FileInfo(fileToWatch), azureStorage.UploadFile, _logger);
-                    
-                    await Task.CompletedTask;
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError($"Got a nasty error: {e}");
-                    break;
-                }
+                _logger.LogError("No file to be watched. Please set variable FILE_TO_WATCH");
+                return;
             }
+
+            var fileToWatch = new FileInfo(fileToWatchAsString);
+
+            var connectionString = Environment.GetEnvironmentVariable("AZURE_CONNECTION_STRING");
+            if (connectionString == null)
+            {
+                _logger.LogError("No connection string found. Please set variable AZURE_CONNECTION_STRING");
+                return;
+            }
+
+            var azureStorage = new AzureStorage(connectionString, _logger);
+            using var _ = new ReactiveFileWatcher(fileToWatch, azureStorage.UploadFile, _logger);
+
+            while (!stoppingToken.IsCancellationRequested) await Task.Delay(-1, stoppingToken);
         }
     }
 }

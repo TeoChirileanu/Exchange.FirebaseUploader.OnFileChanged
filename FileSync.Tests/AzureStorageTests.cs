@@ -18,7 +18,7 @@ namespace FileSync.Tests
             _fileToUpload.Directory?.Create();
             File.WriteAllText(_fileToUpload.FullName, "barfoo");
         }
-        
+
         [Test]
         public async Task ShouldUploadFile()
         {

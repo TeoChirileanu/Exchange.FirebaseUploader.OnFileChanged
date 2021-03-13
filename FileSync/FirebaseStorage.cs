@@ -15,11 +15,11 @@ namespace FileSync
         public FirebaseStorage(string credentialsFile, string bucketName)
         {
             _bucketName = bucketName;
-            
+
             var credentials = GoogleCredential.FromFile(credentialsFile);
             _storageClient = StorageClient.Create(credentials);
         }
-        
+
         public async Task UploadFile(string tempFile)
         {
             try
