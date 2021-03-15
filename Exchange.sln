@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSync", "FileSync\FileSy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSync.Tests", "FileSync.Tests\FileSync.Tests.csproj", "{04E62827-8CF0-4FE8-BE91-D48458D7A31A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService", "WorkerService\WorkerService.csproj", "{AAD7E4D8-22B7-45C0-AFC6-A33E18C8BA5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSync.Service", "FileSync.Service\FileSync.Service.csproj", "{AAD7E4D8-22B7-45C0-AFC6-A33E18C8BA5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
