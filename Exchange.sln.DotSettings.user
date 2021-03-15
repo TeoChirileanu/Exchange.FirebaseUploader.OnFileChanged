@@ -17,7 +17,7 @@
     &lt;/Not&gt;&#xD;
   &lt;/And&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=577e3693_002D23f0_002D46e8_002D9fb0_002D91ef0dc843b0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;FileSync.Tests&amp;gt; #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=577e3693_002D23f0_002D46e8_002D9fb0_002D91ef0dc843b0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;FileSync.Tests&amp;gt; #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="C:\Users\teodo\Documents\RiderProjects\Exchange\FileSync.Tests" Presentation="&amp;lt;FileSync.Tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
@@ -36,7 +36,7 @@
     &lt;TestId&gt;NUnit3x::9F5598EA-1D78-4A01-9A76-F3AA96231A78::net5.0::FileSync.FirebaseUploaderTests.ShouldDownloadFile&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c5a1eb22_002D6cf7_002D4caa_002D9e84_002D7bbc9ddb51d2/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" Name="AzureStorageTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c5a1eb22_002D6cf7_002D4caa_002D9e84_002D7bbc9ddb51d2/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" IsActive="True" Name="AzureStorageTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::04E62827-8CF0-4FE8-BE91-D48458D7A31A::net5.0::FileSync.Tests.AzureStorageTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;

@@ -9,6 +9,7 @@
         <PublishTrimmed>true</PublishTrimmed>
         <AppendTargetFrameworkToPublishDir>false</AppendTargetFrameworkToPublishDir>
         <AppendRuntimeIdentifierToPublishDir>false</AppendRuntimeIdentifierToPublishDir>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>

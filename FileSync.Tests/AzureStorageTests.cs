@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using NFluent;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -30,7 +31,11 @@ namespace FileSync.Tests
             await azureStorage.UploadFile(_fileToUpload);
 
             // Assert
-            Assert.Pass("Manual Check");
+            Check.That(await azureStorage.FileExists(_fileToUpload)).IsTrue();
+            
+            // Cleanup
+            await azureStorage.DeleteFile(_fileToUpload);
+            await azureStorage.DeleteDirectory(_fileToUpload.Directory!.Name);
         }
 
         [TearDown]
