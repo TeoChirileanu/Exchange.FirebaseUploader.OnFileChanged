@@ -1,2 +1,0 @@
-set the variable AZURE_CONNECTION_STRING to DefaultEndpointsProtocol=https;AccountName=paygsan;AccountKey=rBwz8idJR83UWb/JElXuSJgunFUvk5iErMwCF1DYydJzL2BuI/brmhHKsfx4ctJtMGAQ3z8qrkzEfO5EiTtglQ==;EndpointSuffix=core.windows.net
-set the variable FILE_TO_WATCH to the file to be monitored
